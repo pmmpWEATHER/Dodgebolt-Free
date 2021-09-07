@@ -6,19 +6,11 @@ namespace jack\sumo;
 
 use jack\sumo\arena\Arena;
 
-/**
- * Class EmptyArenaChooser
- * @package vixikhd\onevsone
- */
 class EmptyArenaChooser {
 
     /** @var OneVsOne $plugin */
     public $plugin;
 
-    /**
-     * EmptyArenaQueue constructor.
-     * @param OneVsOne $plugin
-     */
     public function __construct(Sumo $plugin) {
         $this->plugin = $plugin;
     }
