@@ -1,12 +1,12 @@
 # Dodgebolt Plugin for Pocketmine MP
 \
-**Features:**\
+**Features:**
 PocketMine-MP for Minecraft Bedrock Edition 1.17 support
  > Shop
  > Simple Commands
  > Awesome Gameplay from MCC
  > Two Free Kits From the Shop
-\
+
 **Commands:**\
 /db help - shows all commands\
 /db make <arena> - make an arena\
