@@ -1,28 +1,31 @@
-name: SumoByMcMelonTV
+name: Dodgebolt
 api: 3.0.0
 version: 1.0.0
-main: jack\sumo\Sumo
+main: WC\Dodgebolt\Dodgebolt
 
 permissions:
-  1vs1.cmd:
-    description: Permission to all the sumo commands
+  db.cmd:
+    description: Permission to all the dodgebolt commands
     default: op
     children:
-      sumo.cmd.help:
-        description: Permission for /sumo help
+      db.cmd.help:
+        description: Permission for /db help
         default: op
-      sumo.cmd.create:
-        description: Permission for /sumo make
+      db.cmd.create:
+        description: Permission for /db make
         default: op
-      sumo.cmd.remove:
-        description: Permission for /sumo delete
+      db.cmd.remove:
+        description: Permission for /db delete
         default: op
-      sumo.cmd.set:
-        description: Permission for /sumo set
+      db.cmd.setup:
+        description: Permission for /db set
         default: op
-      sumo.cmd.arenas:
-        description: Permission for /sumo arenas
+      db.cmd.arenas:
+        description: Permission for /db arenas
         default: op
-      sumo.cmd.join:
-        description: Permission for /sumo join
+      db.cmd.join:
+        description: Permission for /db join
+        default: true
+      db.cmd.shop:
+        description: Permission for /db shop
         default: true
