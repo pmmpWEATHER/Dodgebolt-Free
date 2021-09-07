@@ -1,29 +1,25 @@
-# Sumo Plugin for Pocketmine MP
+# Dodgebolt Plugin for Pocketmine MP
 \
 **Features:**\
-PocketMine-MP for Minecraft Bedrock Edition 1.16.201 support\
+PocketMine-MP for Minecraft Bedrock Edition 1.17 support
+ > Shop
+ > Simple Commands
+ > Awesome Gameplay from MCC
+ > Two Free Kits From the Shop
 \
 **Commands:**\
-/sumo help - shows all sumo commands\
-/sumo make <arena> - make an arena\
-/sumo set <arena> - setup the arena\
-/sumo delete <arena> - deletes a random arena\
-/sumo arenas - list of arenas\
-/sumo join - join random arena\
+/db help - shows all commands\
+/db make <arena> - make an arena\
+/db set <arena> - setup the arena\
+/db delete <arena> - deletes a random arena\
+/db arenas - list of arenas\
+/db join - join random arena\
+/db shop - opens the shop menu\
 \
 **Setup commands:**\
    help - shows setup commands\
    level <world> - sets arena world\
-   setspawn 1 - sets first player's spawn\
-   setspawn 2 - sets second player's spawn\
+   setspawn <number> - sets player's spawn\
    joinsign - sets joinsign (break a sign to set)\
    enable - enables an arena\
 \
-**Download:**\
-[Click Here](https://github.com/McMelonTV/SumoPMMP/releases/download/v1.0.1-beta/SumoPMMP.phar)\
-\
-[<img src="https://poggit.pmmp.io/ci.shield/McMelonTV/SumoPMMP/~" width="100" height="25" />](https://poggit.pmmp.io/ci/McMelonTV/SumoPMMP/~)\
-\
-   **Issues:**\
-   [Move to issues](https://github.com/McMelonTV/SumoPMMP/issues)\
-   [Submit new issue](https://github.com/McMelonTV/SumoPMMP/issues/new)
