@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace jack\sumo;
+namespace Dodgebolt\sumo;
 
 use pocketmine\command\Command;
 use pocketmine\event\block\BlockBreakEvent;
@@ -10,16 +10,16 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
-use jack\sumo\arena\Arena;
-use jack\sumo\commands\SumoCommand;
-use jack\sumo\math\Vector3;
-use jack\sumo\provider\YamlDataProvider;
+use WC\Dodgebolt\arena\Arena;
+use WC\Dodgebolt\commands\SumoCommand;
+use WC\Dodgebolt\math\Vector3;
+use WC\Dodgebolt\provider\YamlDataProvider;
 
 /**
- * Class OneVsOne
+ * Class Dodgebolt
  * @package onevsone
  */
-class Sumo extends PluginBase implements Listener {
+class Dodgebolt extends PluginBase implements Listener {
 
     /** @var YamlDataProvider */
     public $dataProvider;
@@ -47,7 +47,7 @@ class Sumo extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->dataProvider->loadArenas();
         $this->emptyArenaChooser = new EmptyArenaChooser($this);
-        $this->getServer()->getCommandMap()->register("sumo", $this->commands[] = new SumoCommand($this));
+        $this->getServer()->getCommandMap()->register("db", $this->commands[] = new SumoCommand($this));
     }
 
     public function onDisable() {
@@ -75,25 +75,34 @@ class Sumo extends PluginBase implements Listener {
                 $player->sendMessage("§aSumo setup help (1/1):\n".
                 "§7help : Displays list of available setup commands\n" .
                 "§7level : Set arena level\n".
+                "§7slots : Set arena slots\n".
                 "§7setspawn : Set arena spawns\n".
                 "§7joinsign : Set arena joinsign\n".
                 "§7enable : Enable the arena");
                 break;
+            case "slots":
+                if(!isset($args[1])) {
+                    $player->sendMessage("§cSorry the command must be used with: §7slots <int: slots>");
+                    break;
+                }
+                $arena->data["slots"] = (int)$args[1];
+                $player->sendMessage("§l§6> Slots sucessfully updated to $args[1]!");
+                break;
             case "level":
                 if(!isset($args[1])) {
-                    $player->sendMessage("§cUsage: §7level <levelName>");
+                    $player->sendMessage("§cSorry the command must be used with: §7level <levelName>");
                     break;
                 }
                 if(!$this->getServer()->isLevelGenerated($args[1])) {
                     $player->sendMessage("§cLevel $args[1] does not found!");
                     break;
                 }
-                $player->sendMessage("§aArena level updated to $args[1]!");
+                $player->sendMessage("§6Arena level updated to $args[1]!");
                 $arena->data["level"] = $args[1];
                 break;
             case "setspawn":
                 if(!isset($args[1])) {
-                    $player->sendMessage("§cUsage: §7setspawn <int: spawn>");
+                    $player->sendMessage("§cSorry the command must be used with: §7setspawn <int: spawn>");
                     break;
                 }
                 if(!is_numeric($args[1])) {
